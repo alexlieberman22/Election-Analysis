@@ -15,7 +15,6 @@ winning_percentage = 0
 
 with open(file_read) as election_data:
     reader = csv.reader(election_data)
-
     headers = next(reader)
 
     for row in reader:
@@ -27,14 +26,26 @@ with open(file_read) as election_data:
             candidate_votes[candidate_name] = 0
 
         candidate_votes[candidate_name] += 1
-        
+
+
+with open(file_write, "w") as txt_file:
+    election_results = (f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+    
+    print(election_results, end="")
+    txt_file.write(election_results)
+    
 
     for candidate_name in candidate_votes:
         votes = candidate_votes[candidate_name]
    
         vote_percentage = float(votes) / float(total_votes) * 100
 
-        print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results, end="")
+        txt_file.write(candidate_results)
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
@@ -42,13 +53,13 @@ with open(file_read) as election_data:
             winning_candidate = candidate_name
 
 
-print(f"-------------------------\n"
-    f"Winner: {winning_candidate}\n"
-    f"Winning Vote Count: {winning_count:,}\n"
-    f"Winning Percentage: {winning_percentage:.1f}%\n"
-    f"-------------------------\n")
+    winner_results = (f"-------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"-------------------------\n")
+
+    print(winner_results, end="")
+    txt_file.write(winner_results)
 
 
-# with open(file_write, "w") as txt_file:
-
-#     Write data
