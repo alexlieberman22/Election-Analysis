@@ -29,17 +29,20 @@ From the analysis we can show that:
   - Diana DeGette with 73.8 percent of the vote
 
 
+
 ## Challenge Overview 
 
-Analize the county election data in addition to the candidatate and general eleciton data
+Analyze the county election data in addition to the candidate and general election data
 
 ## Challenge Results
 
 - County vote totals:
 
+![](https://github.com/alexlieberman22/ElectionAnalysis/blob/main/Analysis/County_data.PNG)
   
-
 - County with the largest number of votes:
   - Denver with 306,055 votes
 
 ## Challenge Summary
+
+This code has the capability to read and analyze data from other elections. Any number of candidates and counties can be stored in dictionaries and presented in a txt file. This would however require the same exact format as in the election_data.txt file. With a different format of txt file or additional election data from each voter, the code can be modified to read whichever column is important and/or show additional data on top of counties and candidates (such as voter age, gender, ethnicity etc.). The same code structure for candidates and counties can be added onto the code to accommodate other data fields.
