@@ -31,6 +31,15 @@ From the analysis we can show that:
 
 ## Challenge Overview 
 
+Analize the county election data in addition to the candidatate and general eleciton data
+
 ## Challenge Results
+
+- County vote totals:
+
+  
+
+- County with the largest number of votes:
+  - Denver with 306,055 votes
 
 ## Challenge Summary
